@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Phlebotomy Test</title>
+</head>
+<body>
+    <div id="main-container">
+        <div id="header-container">
+            <h1>Phlebotomy Quiz 💉</h1>
+            <p id="phlebotomyLines"></p>
+        </div>
+        <h2 id="score"></h2>
+        <div id="quiz-container">
+            <p id="question"></p>
+            <div id="answerButtons" class="button-container"></div>
+            <div id="button-container">
+                <button id="next-btn" onclick="nextQuestion()">Next</button>
+                <button id="hint-btn" onclick="showHint()">Hint</button>
+            </div>
+            <p id="hint-text"></p>
+            <p id="header-info"></p>
+        </div>
+        <div id="game-over-container">
+            <h2 id="game-over"></h2>
+            <button id="reset-btn" onclick="resetQuiz()" style="display: none;">Reset Game</button>
+        </div>
+        <div id="main-container-footer">
+            <div id="emoji-element">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

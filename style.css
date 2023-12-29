@@ -1,0 +1,235 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Georgia', serif;
+    flex-direction: column;
+    background-image: url('images/background.png');
+    background-size: cover;
+}
+h1 {
+    font-family: 'Georgia', serif;
+    align-self: center;
+    font-size: 30px;
+}
+
+#phlebotomyLines{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+
+#main-container {
+    border: 1px solid lightgray;
+    margin: 5px; /* Adjust margin to control spacing from the edges */
+    padding: 5px; /* Adjust padding to control spacing from the edges */
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#header-container {
+    max-width: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+   
+}
+
+#main-container-footer{
+    text-align: right;
+}
+
+#emoji-element{
+    font-size: 40px;
+    display: inline-block;
+}
+
+
+#score {
+    font-family: Sans-serif;
+    font-size: large;
+}
+
+#quiz-container {
+    text-align: center;
+    width: 800px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    overflow: auto; /* Overflow to enable scrolling if content exceeds the set height */
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+
+#question {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43px;
+    align-items: center;
+}
+
+button {
+    font-family: 'Circular', sans-serif; 
+    background-color: #E9DAFF;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    width: auto; /* Remove fixed width */
+    min-width: 100px; /* Set a minimum width for the buttons */
+    height: auto; /* Remove fixed height */
+    min-height: 40px; /* Set a minimum height for the buttons */
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+#next-btn,
+#hint-btn {
+    font-family: 'Circular', sans-serif; 
+    background-color: #B7AACB;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    width: auto; /* Remove fixed width */
+    min-width: 80px; /* Set a minimum width for the buttons */
+    height: auto; /* Remove fixed height */
+    min-height: 30px; /* Set a minimum height for the buttons */
+    border-radius: 10px;
+    border: 2px solid lightgrey;
+}
+
+
+#hint-text {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#game-over-container{
+    height: 400px;
+    width: 800px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.button-container {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43px;
+    align-items: center;
+}
+
+button {
+    font-family: 'Georgia', serif;
+    background-color: #E9DAFF;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    height: 100px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+#next-btn {
+    font-family: 'Georgia', serif;
+    background-color: #B7AACB;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid lightgrey;
+}
+
+.score {
+    font-family: 'Georgia', serif;
+    font-size: large;
+}
+.quiz-container {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    width: 800px;
+    height: 400px;
+    overflow: auto;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+ 
+.header-container {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hint-btn {
+    font-family: 'Georgia', serif;
+    background-color: #B7AACB;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid lightgrey;
+}
+
+#hint-text {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#game-over-container {
+    font-family: 'Georgia', serif;
+    height: 400px;
+    width: 800px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+                height: auto;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+                height: 60px;
+            }
+
+            #next-btn,
+            #hint-btn {
+                height: 30px;
+            }
+        }
