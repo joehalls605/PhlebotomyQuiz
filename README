@@ -1,0 +1,21 @@
+Phlebotomy Quiz Project
+Welcome to the Phlebotomy Quiz project! This interactive web application tests your knowledge of phlebotomy, the process of drawing blood for various medical purposes. Whether you're a seasoned phlebotomy champion or just getting started, this quiz offers a fun and educational experience.
+
+Getting Started
+To run the Phlebotomy Quiz, simply open the index.html file in your web browser. The quiz features a user-friendly interface with a set of questions related to phlebotomy. Answer each question to the best of your knowledge and see how well you know the world of blood collection.
+
+Features
+Randomized Questions: The quiz dynamically shuffles questions for a unique experience each time.
+Interactive Interface: The user interface is designed for easy navigation and interaction.
+Hint Functionality: Stuck on a question? Use the "Hint" button for a helpful clue.
+Scoring System: Keep track of your score as you progress through the quiz.
+Game Over Screen: Reach the maximum question limit or complete the quiz to see your final score and a thank-you message.
+Technologies Used
+HTML: The structure of the quiz is built using HTML.
+CSS: Styling and layout are handled with CSS, providing an aesthetically pleasing design.
+JavaScript: The quiz logic is implemented using JavaScript, ensuring dynamic and interactive functionality.
+Styling
+The quiz features a clean and visually appealing design. The background image adds a touch of professionalism to the interface. The responsive design ensures a seamless experience on various devices.
+
+Development
+The project structure includes HTML, CSS, and JavaScript files. The JavaScript file (script.js) manages the quiz logic, including question shuffling, answer validation, and scoring.
