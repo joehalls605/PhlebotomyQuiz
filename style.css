@@ -39,6 +39,11 @@ h1 {
    
 }
 
+#header-info{
+    background-color: aquamarine;
+    width: 100px;
+}
+
 #main-container-footer{
     text-align: right;
 }

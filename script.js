@@ -136,6 +136,7 @@ function shuffleQuestions(array) {
   showEmoji()
   
   function loadQuestion(callback) {
+
     if (currentQuestionIndex < maxQuestionLimit) {
       const currentQuestion = questions[currentQuestionIndex];
       const questionElement = document.getElementById("question");
@@ -173,9 +174,12 @@ function shuffleQuestions(array) {
         }
   
         hideHint();
-        if(typeof callback === 'function'){
-          callback();
-        }
+
+        setTimeout(function(){
+          if(typeof callback === 'function'){
+            callback();
+          }
+        })
 
       } else {
         questionElement.textContent = "No more questions";
@@ -191,8 +195,25 @@ function shuffleQuestions(array) {
   
   //test
   console.log()
-  
-  
+
+  document.getElementById("next-btn").addEventListener("click", function(){
+    try{
+        nextQuestion();
+    }
+    catch (error){
+        console.error("A next quesiton error occurred", error);
+    }
+});
+
+document.getElementById("hint-btn").addEventListener("click", function(){
+  try{
+      showHint();
+  }
+  catch (error){
+      console.error("A hint display error occurred", error);
+  }
+});
+
   function getIncorrectAnswers(currentQuestion) {
     const allAnswers = [...questions.map((q) => q.correctAnswer)];
     const correctAnswerIndex = allAnswers.indexOf(currentQuestion.correctAnswer);
@@ -315,7 +336,10 @@ function shuffleQuestions(array) {
     const resetButton = document.getElementById("reset-btn");
     resetButton.style.display = "none";
   
-    loadQuestion();
+    loadQuestion().then(() => {
+      console.log("Testing async")
+    })
+    ;
   }
   
   window.onload = loadQuestion;
