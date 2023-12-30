@@ -135,7 +135,7 @@ function shuffleQuestions(array) {
   showPhlebotomyLines();
   showEmoji()
   
-  function loadQuestion() {
+  function loadQuestion(callback) {
     if (currentQuestionIndex < maxQuestionLimit) {
       const currentQuestion = questions[currentQuestionIndex];
       const questionElement = document.getElementById("question");
@@ -173,6 +173,10 @@ function shuffleQuestions(array) {
         }
   
         hideHint();
+        if(typeof callback === 'function'){
+          callback();
+        }
+
       } else {
         questionElement.textContent = "No more questions";
         hideHint();
