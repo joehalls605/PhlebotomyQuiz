@@ -314,12 +314,13 @@ document.getElementById("hint-btn").addEventListener("click", function(){
     const answerButtons = document.getElementsByClassName("answer-button");
   
     if (userAnswer === currentQuestion.correctAnswer.trim()) {
-      headerInfo.textContent = "Correct!";
+      headerInfo.textContent = "Correct, well done! 😊";
       score++;
-      // answerButtons[currentQuestionIndex % 3].style.backgroundColor = "#4CAF50";
+      headerInfo.style.color = "green";
+      
     } else {
-      headerInfo.textContent = "Incorrect!";
-      // answerButtons[currentQuestionIndex % 3].style.backgroundColor = "#FF5252";
+      headerInfo.textContent = "Incorrect, try again! 🫤";
+      headerInfo.style.color = "red";
     }
   
     currentQuestionIndex++;
