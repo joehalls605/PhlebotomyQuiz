@@ -3,33 +3,45 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: 'Georgia', serif;
+    font-family: Helvetica, Arial, sans-serif;
     flex-direction: column;
     background-image: url('images/background.png');
     background-size: cover;
 }
 h1 {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     align-self: center;
     font-size: 30px;
 }
 
 #phlebotomyLines{
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 40px;
+    font-size: 20px;
+    font-family:  Helvetica, Arial, sans-serif;
 }
 
 
 #main-container {
     border: 1px solid lightgray;
-    margin: 5px; /* Adjust margin to control spacing from the edges */
-    padding: 5px; /* Adjust padding to control spacing from the edges */
+    margin: 5px;
+    padding: 5px; 
     background-color: #fff;
     border-radius: 20px;
+    width: 800px;
+}
+
+#start-btn{
+    width: 300px;
+    margin-top: 40px;
+    font-family:  Helvetica, Arial, sans-serif;
+}
+#start-btn:hover{
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #header-container {
-    max-width: 400px;
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -39,9 +51,21 @@ h1 {
    
 }
 
+#answerFeedback{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family:  Helvetica, Arial, sans-serif;
+}
+
 #header-info{
-    background-color: aquamarine;
     width: 100px;
+}
+
+.answer-button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #main-container-footer{
@@ -51,28 +75,34 @@ h1 {
 #emoji-element{
     font-size: 40px;
     display: inline-block;
+    margin: 20px;
 }
 
 
 #score {
     font-family: Sans-serif;
     font-size: large;
+    font-family:  Helvetica, Arial, sans-serif;
 }
 
 #quiz-container {
     text-align: center;
-    width: 800px; /* Set a fixed width */
-    height: 400px; /* Set a fixed height */
-    overflow: auto; /* Overflow to enable scrolling if content exceeds the set height */
+    overflow: auto; 
     font-size: 20px;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 
 #question {
     font-weight: bold;
     font-size: 20px;
+    font-family:  Helvetica, Arial, sans-serif;
+    margin-top: 50px;
+}
+
+#answerButtons{
+    padding: 30px;
 }
 
 
@@ -84,39 +114,45 @@ h1 {
 }
 
 button {
-    font-family: 'Circular', sans-serif; 
+    font-family:  Helvetica, Arial, sans-serif;
     background-color: #E9DAFF;
     font-size: 20px;
     padding: 10px;
     margin: 5px;
-    width: auto; /* Remove fixed width */
-    min-width: 100px; /* Set a minimum width for the buttons */
-    height: auto; /* Remove fixed height */
-    min-height: 40px; /* Set a minimum height for the buttons */
+    width: auto; 
+    min-width: 100px; 
+    height: auto;
+    min-height: 40px; 
     border: 2px solid lightgray;
     border-radius: 10px;
 }
 
 #next-btn,
 #hint-btn {
-    font-family: 'Circular', sans-serif; 
-    background-color: #B7AACB;
-    font-size: 16px;
+    font-family:  Helvetica, Arial, sans-serif;
+    font-size: 18px;
     color: white;
     padding: 10px;
     margin: 5px;
-    width: auto; /* Remove fixed width */
-    min-width: 80px; /* Set a minimum width for the buttons */
-    height: auto; /* Remove fixed height */
-    min-height: 30px; /* Set a minimum height for the buttons */
+    width: auto; 
+    min-width: 80px; 
+    height: auto; 
+    min-height: 30px;
     border-radius: 10px;
-    border: 2px solid lightgrey;
+}
+
+#next-btn:hover,
+#hint-btn:hover {
+    transform: (1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
 #hint-text {
     font-weight: bold;
     font-size: 15px;
+    font-family:  Helvetica, Arial, sans-serif;
+    margin-top: 30px;
 }
 
 #game-over-container{
@@ -130,7 +166,7 @@ button {
 }
 
 .button-container {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: space-between;
     margin-top: 43px;
@@ -138,7 +174,7 @@ button {
 }
 
 button {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     background-color: #E9DAFF;
     font-size: 20px;
     padding: 10px;
@@ -150,27 +186,23 @@ button {
 }
 
 #next-btn {
-    font-family: 'Georgia', serif;
-    background-color: #B7AACB;
+    font-family:  Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: white;
+    color: black;
     padding: 10px;
     margin: 5px;
     width: 100%;
     height: 40px;
     border-radius: 10px;
-    border: 2px solid lightgrey;
 }
 
 .score {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     font-size: large;
 }
 .quiz-container {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     text-align: center;
-    width: 800px;
-    height: 400px;
     overflow: auto;
     font-size: 20px;
     padding: 20px;
@@ -180,35 +212,34 @@ button {
 .header-container {
     font-family: 'Georgia', serif;
     text-align: center;
-    max-width: 400px;
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #hint-btn {
-    font-family: 'Georgia', serif;
-    background-color: #B7AACB;
+    font-family:  Helvetica, Arial, sans-serif;
+    background-color: #E9DAFF;
     font-size: 16px;
-    color: white;
+    color: black;
     padding: 10px;
     margin: 5px;
     width: 100%;
     height: 40px;
     border-radius: 10px;
-    border: 2px solid lightgrey;
 }
 
 #hint-text {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 15px;
 }
 
 #game-over-container {
-    font-family: 'Georgia', serif;
+    font-family:  Helvetica, Arial, sans-serif;
     height: 400px;
     width: 800px;
     display: none;

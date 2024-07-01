@@ -6,22 +6,38 @@ function shuffleQuestions(array) {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
+
+  /* Applying the rest operator, the ... is used in the function parameters, allowing me to pass
+  an indefinite number of arguments to the function as an array. 
+
+  Before the function expected a single argument, now it expects any number of arguments and they will
+  be treated as elements of an array
   
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+*/
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  
-  function shufflePhlebotomyLines(array){
-    for(let p = array.length -1; p > 0; p--){
-      const x = Math.floor(Math.random() * (p + 1));
-      [array[p], array[x]] = [array[x], array[p]];
-    }
-  
+  return array;
+}
+
+function shufflePhlebotomyLines(array) {
+  for (let p = array.length - 1; p > 0; p--) {
+    const x = Math.floor(Math.random() * (p + 1));
+    [array[p], array[x]] = [array[x], array[p]];
   }
+}
+
+const arrayToShuffle = [1, 2, 3, 4, 5, 7, 8, 9, 10];
+const shuffledArray = shuffleArray(arrayToShuffle);
+console.log(shuffledArray);
+
+const phlebotomyLinesToShuffle = ["line1", "line2", "line3"];
+const shuffledPhlebotomyLines = shuffleArray(phlebotomyLinesToShuffle);
+console.log(shuffledPhlebotomyLines);
+
   
     //using a switch statement
     function shuffleEmoji(array){
@@ -40,6 +56,7 @@ function shuffleQuestions(array) {
       }
       console.log(emojiToShow);
       return emojiToShow;
+      
     }
   
   
@@ -134,64 +151,86 @@ function shuffleQuestions(array) {
   const maxQuestionLimit = 9; // Set your desired maximum question limit
   showPhlebotomyLines();
   showEmoji()
-  
-  function loadQuestion(callback) {
 
-    if (currentQuestionIndex < maxQuestionLimit) {
-      const currentQuestion = questions[currentQuestionIndex];
-      const questionElement = document.getElementById("question");
-      const answerButtonsContainer = document.getElementById("answerButtons");
+  const startButton = document.getElementById("start-btn");
+  const quizContainer = document.getElementById("quiz-container");
+  const headerContainer = document.getElementById("header-container");
   
-      // Display the question and hide the hint
-      if (currentQuestion) {
-        questionElement.textContent = currentQuestion.question;
+  startButton.addEventListener("click", startGame);
+
+  function startGame(){
+    headerContainer.style.display = "none";
+    quizContainer.style.display = "block";
+    loadQuestion();
+  }
+
+  async function loadQuestion() {
+    try {
+      if (currentQuestionIndex < maxQuestionLimit) {
+        const currentQuestion = questions[currentQuestionIndex];
+        const questionElement = document.getElementById("question");
+        const answerButtonsContainer = document.getElementById("answerButtons");
   
-        answerButtonsContainer.innerHTML = "";
+        // Display the question and hide the hint
+        if (currentQuestion) {
+          questionElement.textContent = currentQuestion.question;
   
-        const correctAnswer = currentQuestion.correctAnswer;
-        const incorrectAnswers = getIncorrectAnswers(currentQuestion);
+          answerButtonsContainer.innerHTML = "";
   
-        // Randomly choose the position for the correct answer button
-        const correctAnswerIndex = Math.floor(Math.random() * 3);
+          const correctAnswer = currentQuestion.correctAnswer;
+          const incorrectAnswers = getIncorrectAnswers(currentQuestion);
   
-        for (let i = 0; i < 3; i++) {
-          const button = document.createElement("button");
-          button.classList.add("answer-button"); // Add a class to the button
+          // Randomly choose the position for the correct answer button
+          const correctAnswerIndex = Math.floor(Math.random() * 3);
   
-          if (i === correctAnswerIndex) {
-            button.textContent = correctAnswer;
-            button.onclick = function () {
-              checkAnswer(correctAnswer);
-            };
-          } else {
-            button.textContent = incorrectAnswers.pop(); // Get an incorrect answer
-            button.onclick = function () {
-              checkAnswer(button.textContent);
-            };
+          for (let i = 0; i < 3; i++) {
+            const button = document.createElement("button");
+            button.classList.add("answer-button");
+  
+            if (i === correctAnswerIndex) {
+              button.textContent = correctAnswer;
+              button.onclick = function () {
+                checkAnswer(correctAnswer);
+                currentQuestionIndex++;
+                loadNextQuestion();
+              };
+            } else {
+              button.textContent = incorrectAnswers.pop();
+              button.onclick = function () {
+                checkAnswer(button.textContent);
+                currentQuestionIndex++;
+                loadNextQuestion();
+              };
+            }
+  
+            answerButtonsContainer.appendChild(button);
           }
   
-          answerButtonsContainer.appendChild(button);
+          hideHint();
+  
+        } else {
+          // If the maximum question limit is reached, end the game
+          gameOver();
+          resetQuiz();
+          return;
         }
-  
-        hideHint();
-
-        setTimeout(function(){
-          if(typeof callback === 'function'){
-            callback();
-          }
-        })
-
       } else {
-        questionElement.textContent = "No more questions";
-        hideHint();
-        hideQuestion();
+        // If the maximum question limit is reached, end the game
+        gameOver();
+        resetQuiz();
+        return;
       }
-    } else {
-      // If the maximum question limit is reached, end the game
-      gameOver();
-      resetQuiz();
+    } catch (error) {
+      console.error("An error occurred while loading the question", error);
     }
   }
+  
+  function loadNextQuestion() {
+    setTimeout(() => {
+      loadQuestion();
+    }, 0);
+  }
+  
   
   //test
   console.log()
@@ -229,8 +268,9 @@ document.getElementById("hint-btn").addEventListener("click", function(){
   
   function gameOver() {
     hideQuestion();
+    const emojiBlood = "🩸";
     const thankYouMessage = "Thank you for playing! <br><br>";
-    const finalScore = `Your final score is ${score} 🩸`;
+    const finalScore = `Your final score is ${score} ${emojiBlood}`;
     const finalScoreElement = document.getElementById("game-over");
     finalScoreElement.innerHTML = thankYouMessage + finalScore;
   
@@ -244,9 +284,9 @@ document.getElementById("hint-btn").addEventListener("click", function(){
   }
   
   function showPhlebotomyLines(){
-    const currentPhlebotomyLine = phlebotomyLines[currentPhlebotomyLinesIndex];
+    const {line: phlebotomyLine} = phlebotomyLines[currentPhlebotomyLinesIndex];
     const phlebotomyElement = document.getElementById("phlebotomyLines");
-    phlebotomyElement.textContent = currentPhlebotomyLine.line;
+    phlebotomyElement.textContent = phlebotomyLine;
   }
   
   function showEmoji(){
@@ -341,5 +381,5 @@ document.getElementById("hint-btn").addEventListener("click", function(){
     })
     ;
   }
-  
+
   window.onload = loadQuestion;
