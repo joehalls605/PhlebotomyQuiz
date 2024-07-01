@@ -116,15 +116,31 @@ console.log(shuffledPhlebotomyLines);
   
   const phlebotomyLines = [
     {
-      line: "Welcome back, phlebotomy champion! let's see your needle-sharp knowledge."
+        line: "Let's see your needle-sharp knowledge."
     },
     {
-      line: "Thrilled to have you back for another phlebotomy quiz!"
+        line: "Let's get to the vein of the matter with some questions."
     },
     {
-      line: "Back in action! Shine bright like the perfect blood draw"
+        line: "Time to puncture through this quiz with your skills."
+    },
+    {
+        line: "Let's draw out your expertise in phlebotomy."
+    },
+    {
+        line: "Sharpen your wits for this phlebotomy quiz."
+    },
+    {
+        line: "Let's see if you can find the vein of the answers."
+    },
+    {
+        line: "Prepare to tap into your phlebotomy knowledge."
+    },
+    {
+        line: "Time to test your phlebotomy precision with this quiz."
     }
-  ];
+];
+
   
   
   const phlebotomyEmoji = [

@@ -3,27 +3,31 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     flex-direction: column;
     background-image: url('images/background.png');
     background-size: cover;
 }
 h1 {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     align-self: center;
     font-size: 30px;
 }
 
 #phlebotomyLines{
     margin-top: 30px;
-    margin-left: 40px;
     font-size: 20px;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+p{
+    font-size: 20px;
 }
 
 
 #main-container {
-    border: 1px solid lightgray;
+    border: 2px solid black;
     margin: 5px;
     padding: 5px; 
     background-color: #fff;
@@ -34,7 +38,7 @@ h1 {
 #start-btn{
     width: 300px;
     margin-top: 40px;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
 #start-btn:hover{
@@ -52,12 +56,17 @@ h1 {
    
 }
 
+#header-container h1 {
+    font-size: 35px;
+   
+}
+
 #answerFeedback{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #header-info{
@@ -86,7 +95,7 @@ h1 {
 #score {
     font-family: Sans-serif;
     font-size: large;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #quiz-container {
@@ -100,8 +109,8 @@ h1 {
 
 #question {
     font-weight: bold;
-    font-size: 20px;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 50px;
 }
 
@@ -118,7 +127,7 @@ h1 {
 }
 
 button {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     background-color: #E9DAFF;
     font-size: 20px;
     padding: 10px;
@@ -127,13 +136,13 @@ button {
     min-width: 100px; 
     height: auto;
     min-height: 40px; 
-    border: 2px solid lightgray;
+    border: 2px solid black;
     border-radius: 10px;
 }
 
 #next-btn,
 #hint-btn {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: white;
     padding: 10px;
@@ -143,19 +152,21 @@ button {
     height: auto; 
     min-height: 30px;
     border-radius: 10px;
+    border: 2px solid black;
 }
 
 #next-btn:hover,
 #hint-btn:hover {
     transform: (1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #e0c8ff;
 }
 
 
 #hint-text {
     font-weight: bold;
     font-size: 15px;
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     margin-top: 30px;
 }
 
@@ -170,27 +181,36 @@ button {
 }
 
 .button-container {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: space-between;
     margin-top: 43px;
     align-items: center;
 }
 
+#answerButtons button{
+    background-color: #f3eaff;
+}
+
+#answerButtons button:hover{
+    background-color: #e0c8ff;
+}
+
+
 button {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     background-color: #E9DAFF;
     font-size: 20px;
     padding: 10px;
     margin: 5px;
     width: 100%;
     height: 100px;
-    border: 2px solid lightgray;
+    border: 2px solid black;
     border-radius: 10px;
 }
 
 #next-btn {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:  Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: black;
     padding: 10px;
@@ -198,34 +218,25 @@ button {
     width: 100%;
     height: 40px;
     border-radius: 10px;
+    border: 2px solid black;
 }
 
 .score {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: large;
 }
 .quiz-container {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     overflow: auto;
     font-size: 20px;
     padding: 20px;
     margin-bottom: 40px;
 }
- 
-.header-container {
-    font-family: 'Georgia', serif;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
+
 
 #hint-btn {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #E9DAFF;
     font-size: 16px;
     color: black;
@@ -235,15 +246,18 @@ button {
     height: 40px;
     border-radius: 10px;
 }
+#hint-btn:hover {
+   background-color: #e0c8ff;
+}
 
 #hint-text {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
 }
 
 #game-over-container {
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     height: 400px;
     width: 800px;
     display: none;
@@ -254,9 +268,7 @@ button {
 }
 
 
-
-        /* Media query for smaller screens */
-        @media (max-width: 600px) {
+@media (max-width: 600px) {
             .quiz-container {
                 width: 90%;
                 height: auto;
@@ -267,9 +279,21 @@ button {
                 font-size: 16px;
                 height: 60px;
             }
+            
 
             #next-btn,
             #hint-btn {
                 height: 30px;
             }
-        }
+
+            #main-container{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+            }
+            #hint-btn{
+                padding: 10px;
+            }
+}
+
+        
