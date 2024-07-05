@@ -1,21 +1,33 @@
-Phlebotomy Quiz Project
-Welcome to the Phlebotomy Quiz project! This interactive web application tests your knowledge of phlebotomy, the process of drawing blood for various medical purposes. Whether you're a seasoned phlebotomy champion or just getting started, this quiz offers a fun and educational experience.
+Phlebotomy Quiz Application
 
-Getting Started
-To run the Phlebotomy Quiz, simply open the index.html file in your web browser. The quiz features a user-friendly interface with a set of questions related to phlebotomy. Answer each question to the best of your knowledge and see how well you know the world of blood collection.
+This application tests your knowledge of phlebotomy with multiple choice questions. 
 
-Features
-Randomized Questions: The quiz dynamically shuffles questions for a unique experience each time.
-Interactive Interface: The user interface is designed for easy navigation and interaction.
-Hint Functionality: Stuck on a question? Use the "Hint" button for a helpful clue.
-Scoring System: Keep track of your score as you progress through the quiz.
-Game Over Screen: Reach the maximum question limit or complete the quiz to see your final score and a thank-you message.
-Technologies Used
-HTML: The structure of the quiz is built using HTML.
-CSS: Styling and layout are handled with CSS, providing an aesthetically pleasing design.
-JavaScript: The quiz logic is implemented using JavaScript, ensuring dynamic and interactive functionality.
-Styling
-The quiz features a clean and visually appealing design. The background image adds a touch of professionalism to the interface. The responsive design ensures a seamless experience on various devices.
+This application was built with HTML, JavaScript and CSS.
 
-Development
-The project structure includes HTML, CSS, and JavaScript files. The JavaScript file (script.js) manages the quiz logic, including question shuffling, answer validation, and scoring.
+Logic overview:
+
+showPhlebotomyLines() generates application introductory lines to the user. This is achieved by shuffling the array of lines.
+
+showEmoji() randomises the emoji element shown in the application.
+
+startGame() shuffles the array of questions, it then shows the random emoji and calls the loadQuestion function.
+
+loadQuestion() creates a current question based on the array of questions. It then gets three incorrect answers and one correct answer. A hint is also hidden unless revealed by the user. The game can also end if the max question limit is reached.
+
+getIncorectAnswers() this returns an array of answers that do not equal the correct current answer.
+
+checkAnswer() validates if the user input answer is equal to the correct current answer.
+
+showHint() reveals hint element when clicked.
+
+hideHint() initially sets the hint as hidden.
+
+gameOver() reveals the end of game content.
+
+resetQuiz() resets the application dom elements.
+
+
+
+
+ 
+
