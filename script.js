@@ -173,6 +173,7 @@ function gameOver() {
   document.getElementById("quiz-container").style.display = "none";
   const gameOverContainer = document.getElementById("game-over-container");
   gameOverContainer.style.display = "flex";
+  gameOverContainer.style.margin = 50;
   
   const finalScoreElement = document.getElementById("game-over");
   finalScoreElement.innerHTML = `Thank you for playing! <br><br>Your final score is ${score} 🩸`;
@@ -181,14 +182,7 @@ function gameOver() {
 }
 
 function resetQuiz() {
-  currentQuestionIndex = 0;
-  score = 0;
-  document.getElementById("game-over-container").style.display = "none";
-  document.getElementById("reset-btn").style.display = "none";
-  document.getElementById("header-container").style.display = "block";
-  document.getElementById("quiz-container").style.display = "none";
-  showPhlebotomyLines();
-  showEmoji();
+  window.location.reload();
 }
 
 document.getElementById("hint-btn").addEventListener("click", showHint);
